@@ -8,7 +8,8 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 
 ### [DAY 1] Fundamentals & First API Call
 - **Directory:** [`DAY1/`](file:///c:/Users/ramuv/AgenticAI/DAY1)
-- **Notebook:** [`agenticAI_Day1.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY1/agenticAI_Day1.ipynb)
+- **Detailed Guide:** [`DAY1/README.md`](file:///c:/Users/ramuv/AgenticAI/DAY1/README.md)
+- **Notebook:** [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY1/task.ipynb)
 - **Domain:** Sweet Crumbs Home Bakery
 - **Concepts & Implementation:**
   - Understanding LLM core mechanics: Next-token prediction, token estimation, temperature, context window limits, and statelessness.
@@ -20,7 +21,8 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 
 ### [DAY 2] Prompts, Memory, and Building an Agent
 - **Directory:** [`DAY2/`](file:///c:/Users/ramuv/AgenticAI/DAY2)
-- **Notebook:** [`agenticAI_Day2.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY2/agenticAI_Day2.ipynb)
+- **Detailed Guide:** [`DAY2/README.md`](file:///c:/Users/ramuv/AgenticAI/DAY2/README.md)
+- **Notebook:** [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY2/task.ipynb)
 - **Domain:** BrightPage Stationery & Office Supplies
 - **Concepts & Implementation:**
   - **4-Pillar System Prompt:** Calibrating **Role**, **Facts** (catalogue prices, free delivery over ₹500, bulk discounts), **Rules** (unlisted item fallback: *"I'll check with the store manager..."*), and **Format** (concise, under 60 words).
@@ -31,6 +33,13 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
   - **Error Resilience:** Wrapping API calls in `try / except` to catch `RateLimitError` (429) or connection drops gracefully.
   - **Interactive Colab Dashboard:** `ipywidgets` interface featuring live chat bubbles, quick policy test presets, intent classifier tester, and JSON order extraction.
   - **Student's 10% Verification Suite:** Experiments testing temperature variations ($T=0.2$ vs $T=1.2$), hallucination boundaries, and memory window limits.
+
+---
+
+## 🎓 Academic Submission (`DriveReady OPC 2026`)
+- **Folder:** [`24B11CS514_DriveReady_OPC_2026/`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026)
+- **Day 1 Submission:** [`24B11CS514_DriveReady_OPC_2026/Day-1/`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-1) (with [`README.md`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-1/README.md) & [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-1/task.ipynb))
+- **Day 2 Submission:** [`24B11CS514_DriveReady_OPC_2026/Day-2/`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-2) (with [`README.md`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-2/README.md) & [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-2/task.ipynb))
 
 ---
 
