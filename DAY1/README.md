@@ -123,7 +123,7 @@ An `ipywidgets` GUI featuring:
 ### Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/JAY4IGNITE/agenticAI.git
+   git clone https://github.com/JAY4IGNITE/24B11CS514_DriveReady_OPC_2026.git
    cd agenticAI
    ```
 2. Copy `.env.example` to `.env` and insert your `GROQ_API_KEY`:

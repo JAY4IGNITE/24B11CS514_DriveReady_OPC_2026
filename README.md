@@ -36,11 +36,6 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 
 ---
 
-## 🎓 Academic Submission (`DriveReady OPC 2026`)
-- **Folder:** [`24B11CS514_DriveReady_OPC_2026/`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026)
-- **Day 1 Submission:** [`24B11CS514_DriveReady_OPC_2026/Day-1/`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-1) (with [`README.md`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-1/README.md) & [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-1/task.ipynb))
-- **Day 2 Submission:** [`24B11CS514_DriveReady_OPC_2026/Day-2/`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-2) (with [`README.md`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-2/README.md) & [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/24B11CS514_DriveReady_OPC_2026/Day-2/task.ipynb))
-
 ---
 
 ## 🔑 Setup & API Keys
