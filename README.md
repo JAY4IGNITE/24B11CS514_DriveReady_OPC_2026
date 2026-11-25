@@ -36,10 +36,23 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 
 ---
 
+### [DAY 3] Prompt Templates, Memory, Evaluation & Agent Sneak Peek (Gemini API)
+- **Directory:** [`DAY3/`](file:///c:/Users/ramuv/AgenticAI/DAY3)
+- **Detailed Guide:** [`DAY3/README.md`](file:///c:/Users/ramuv/AgenticAI/DAY3/README.md)
+- **Notebook:** [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY3/task.ipynb)
+- **Domains:** Sweet Crumbs Home Bakery & BrightPage Stationery & Office Supplies
+- **Concepts & Implementation:**
+  - **Gemini API Integration:** Migrated from Groq to `ChatGoogleGenerativeAI` (`gemini-3.5-flash-lite`) via `langchain-google-genai`.
+  - **LCEL Chains & Memory:** `ChatPromptTemplate`, `MessagesPlaceholder("history")`, and `StrOutputParser()`.
+  - **Automated Prompt Evaluation:** CSV-driven test harness (`tests.csv`, `brightpage_tests.csv`) measuring pass rates across prompt iterations.
+  - **Temperature & Stability:** Comparing `temperature=0.3` vs two runs at `temperature=1.0`.
+  - **LangChain Agent Sneak Peek:** `from langchain.agents import create_agent` and classifying jobs as `plain code`, `one LLM call`, or `agent`.
+
 ---
 
 ## 🔑 Setup & API Keys
 
-- All tasks use the same **Groq API Key** (`GROQ_API_KEY`).
-- **Google Colab:** Add `GROQ_API_KEY` to Colab Secrets (the 🔑 Key icon on the left sidebar) and toggle **"Notebook access"** to **ON**.
-- **Local Runs:** Managed via the single root `.env` (automatically discovered across all days via `python-dotenv`). Copy `.env.example` to `.env` and add your key.
+- **Day 1 & Day 2** use **Groq API Key** (`GROQ_API_KEY`).
+- **Day 3** uses **Google Gemini API Key** (`GOOGLE_API_KEY` from [Google AI Studio](https://aistudio.google.com/app/apikey)).
+- **Google Colab:** Add `GROQ_API_KEY` / `GOOGLE_API_KEY` to Colab Secrets (the 🔑 Key icon on the left sidebar) and toggle **"Notebook access"** to **ON**.
+- **Local Runs:** Managed via the single root `.env` (automatically discovered across all days via `python-dotenv`). Copy `.env.example` to `.env` and add your keys.
