@@ -4,7 +4,7 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 
 ---
 
-## 🗂️ Daily Task Tracker
+## Daily Task Tracker
 
 ### [DAY 1] Fundamentals & First API Call
 - **Directory:** [`DAY1/`](file:///c:/Users/ramuv/AgenticAI/DAY1)
@@ -50,9 +50,23 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 
 ---
 
-## 🔑 Setup & API Keys
+### [DAY 4] Tools, Structured Records, Sheets & Agent Traces
+- **Directory:** [`DAY4/`](file:///c:/Users/ramuv/AgenticAI/DAY4)
+- **Detailed Guide:** [`DAY4/README.md`](file:///c:/Users/ramuv/AgenticAI/DAY4/README.md)
+- **Notebook:** [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY4/task.ipynb)
+- **Domains:** Sweet Crumbs Home Bakery & BrightPage Stationery & Office Supplies
+- **Concepts & Implementation:**
+  - **Tool-Calling Agents:** `@tool` decorators (`get_price`, `is_open`, `log_order` and BrightPage's `get_stationery_price`, `check_store_and_delivery`, `log_stationery_order`) wired into `create_agent` with `ChatGroq` (`openai/gpt-oss-20b`).
+  - **Pydantic Validation & `with_structured_output`:** Enforced `Order` and `StationeryOrder` schemas and tested structured extraction on 5 messy BrightPage customer messages.
+  - **Sheet Integration:** Connected to Google Sheets via `gspread` in Colab with a local CSV-backed `LocalWorksheet` mirror (`sweet_crumbs_orders.csv`, `brightpage_orders.csv`).
+  - **Customer Edge-Case Testing:** Verified `"donut"` (unlisted item), missing pickup date, and `0 cupcakes` prevent invalid sheet writes and added them to [`DAY3/tests.csv`](file:///c:/Users/ramuv/AgenticAI/DAY3/tests.csv) (13/13 passing).
+  - **Trace Inspection & Break-It Test:** Counted model vs tool calls using `pretty_print()`, and verified how renaming `get_price` to `tool1` (`"does stuff"`) breaks tool selection before restoring it.
 
-- **Day 1 & Day 2** use **Groq API Key** (`GROQ_API_KEY`).
+---
+
+## Setup & API Keys
+
+- **Day 1, Day 2 & Day 4** use **Groq API Key** (`GROQ_API_KEY`).
 - **Day 3** uses **Google Gemini API Key** (`GOOGLE_API_KEY` from [Google AI Studio](https://aistudio.google.com/app/apikey)).
 - **Google Colab:** Add `GROQ_API_KEY` / `GOOGLE_API_KEY` to Colab Secrets (the 🔑 Key icon on the left sidebar) and toggle **"Notebook access"** to **ON**.
 - **Local Runs:** Managed via the single root `.env` (automatically discovered across all days via `python-dotenv`). Copy `.env.example` to `.env` and add your keys.
