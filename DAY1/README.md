@@ -1,18 +1,18 @@
-# 🧁 Day 1: How LLMs Work & Your First API Call
+# ✏️ Day 1: How LLMs Work & Your First API Call
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JAY4IGNITE/agenticAI/blob/main/DAY1/task.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JAY4IGNITE/24B11CS514_DriveReady_OPC_2026/blob/main/DAY1/task.ipynb)
 
-Comprehensive guide, concepts, and implementation details for **Day 1** of the Agentic AI Workshop.
+Comprehensive guide, concepts, and implementation details for **Day 1** of the Agentic AI Workshop — built for **BrightPage Stationery & Office Supplies**.
 
 ---
 
 ## 🎯 Task Overview
-Build your first customer-facing AI assistant for **Sweet Crumbs Home Bakery** using Groq API, LangChain `ChatGroq`, and Meta Llama Prompt Guard.
+Build your first customer-facing AI assistant for **BrightPage Stationery & Office Supplies** using Groq API, LangChain `ChatGroq`, and Meta Llama Prompt Guard.
 
 - **Primary Notebook:** [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY1/task.ipynb)
-- **Domain:** Sweet Crumbs Home Bakery
+- **Domain:** BrightPage Stationery & Office Supplies
 - **Models Used:** 
-  - `openai/gpt-oss-120b` (Chat completion & bakery assistant)
+  - `openai/gpt-oss-120b` (Chat completion & stationery shop assistant)
   - `meta-llama/llama-prompt-guard-2-22m` (Prompt injection & jailbreak safety classifier)
 
 ---
@@ -42,9 +42,9 @@ The fixed token limit an LLM can process in a single call (prompt + system promp
 
 ### 6. Hallucinations & The 4-Pillar Prompt
 LLMs generate text that sounds plausible, even when factually incorrect. To anchor responses, we engineer a **4-Pillar System Prompt**:
-1. **ROLE:** Persona and identity (e.g., Sweet Crumbs assistant).
-2. **FACTS:** Ground truth information (prices, 24-hour notice, eggless cakes).
-3. **RULES:** Explicit policy boundaries (never promise delivery times; fallback to owner).
+1. **ROLE:** Persona and identity (BrightPage Stationery & Office Supplies assistant).
+2. **FACTS:** Ground truth information (item prices, Rs 500 free delivery threshold, 10% bulk discount on 10+ identical items).
+3. **RULES:** Explicit policy boundaries (never promise out-of-city delivery; fallback to `"I'll check with the store manager."`).
 4. **FORMAT:** Output length and language constraints (under 50 words, polite, English/Telugu).
 
 ---
@@ -71,43 +71,38 @@ Bulletproof authentication handling across local and cloud environments:
 3. Google Colab Secrets via `google.colab.userdata.get("GROQ_API_KEY")`.
 4. Interactive masked fallback via `getpass.getpass(...)` preventing unhandled notebook crashes.
 
-### Cell 5 & 6: 4-Pillar System Prompt & LangChain Invocation
+### Cell 4 & 5: 4-Pillar System Prompt & LangChain Invocation
 ```python
-SYSTEM = """ROLE:   You are the assistant for Sweet Crumbs Home Bakery.
-FACTS:  We bake to order. Orders need 24 hours' notice. All cakes have eggless versions.
-        Plum cake Rs 500. Chocolate cake Rs 650. Cupcake Rs 80.
-RULES:  Never promise a delivery time. If the answer isn't in FACTS, say "I'll check with the owner."
+SYSTEM = """ROLE:   You are the assistant for BrightPage Stationery & Office Supplies.
+FACTS:  Spiral notebook (200 pgs) Rs 85. A4 copier paper ream (500 sheets) Rs 320.
+        Gel pen pack (10 pens) Rs 150. Geometry box set Rs 160.
+        Free local delivery above Rs 500 (Rs 40 fee below Rs 500). 10% bulk discount on 10+ identical items.
+RULES:  Never promise delivery outside local city limits. If the answer isn't in FACTS, say "I'll check with the store manager."
 FORMAT: Under 50 words, friendly, English or Telugu matching the customer."""
 
 def ask(question):
     return llm.invoke([("system", SYSTEM), ("human", question)]).content
 ```
 
-### Cell 7: Verification Tests
-- **Test 1:** Order notice rule check (`"Can I get my order tomorrow?"`).
-- **Test 2:** Same-day eggless cake check (`"Can I get an eggless cake today evening?"`).
+### Cell 6: Verification Tests
+- **Test 1:** Out-of-city delivery rule check (`"Can you deliver notebooks outside the city tomorrow?"`).
+- **Test 2:** Bulk discount & delivery check (`"Do I get a discount and free delivery if I order 10 spiral notebooks?"`).
 
-### Cell 8: Direct Groq API Call with Token Breakdown
-Calls the native Groq completion API and prints token metrics:
-```text
-📊 Token Usage:
-  Prompt Tokens:     186
-  Completion Tokens: 161
-  Total Tokens:      347
-```
+### Cell 7: Direct Groq API Call with Token Breakdown
+Calls the native Groq completion API with `openai/gpt-oss-120b` and prints prompt, completion, and total token metrics.
 
-### Cell 9: Meta Llama Prompt Guard
+### Cell 8: Meta Llama Prompt Guard
 Classifies adversarial inputs and prompt injections (`meta-llama/llama-prompt-guard-2-22m`):
 - Score $\ge 0.5$: Unsafe / injection risk.
 - Score $< 0.5$: Safe customer prompt.
 
-### Cell 11: Interactive Dashboard
+### Cell 9: Interactive Dashboard
 An `ipywidgets` GUI featuring:
-- Live dropdown between **Bakery LLM** and **Prompt Guard**.
+- Live dropdown between **BrightPage LLM** and **Prompt Guard**.
 - Custom customer prompt text input.
 - Preset test buttons:
-  - *Sample 1:* Eggless cake notice
-  - *Sample 2:* Cake prices inquiry
+  - *Sample 1:* Free delivery policy
+  - *Sample 2:* Stationery prices inquiry
   - *Sample 3:* Prompt injection attack test
 
 ---

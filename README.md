@@ -10,7 +10,7 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 - **Directory:** [`DAY1/`](file:///c:/Users/ramuv/AgenticAI/DAY1)
 - **Detailed Guide:** [`DAY1/README.md`](file:///c:/Users/ramuv/AgenticAI/DAY1/README.md)
 - **Notebook:** [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY1/task.ipynb)
-- **Domain:** Sweet Crumbs Home Bakery
+- **Domain:** BrightPage Stationery & Office Supplies
 - **Concepts & Implementation:**
   - Understanding LLM core mechanics: Next-token prediction, token estimation, temperature, context window limits, and statelessness.
   - Making the first API call to Groq using LangChain `ChatGroq` (`openai/gpt-oss-120b`).
@@ -40,13 +40,13 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 - **Directory:** [`DAY3/`](file:///c:/Users/ramuv/AgenticAI/DAY3)
 - **Detailed Guide:** [`DAY3/README.md`](file:///c:/Users/ramuv/AgenticAI/DAY3/README.md)
 - **Notebook:** [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY3/task.ipynb)
-- **Domains:** Sweet Crumbs Home Bakery & BrightPage Stationery & Office Supplies
+- **Domain:** BrightPage Stationery & Office Supplies
 - **Concepts & Implementation:**
   - **Gemini API Integration:** Migrated from Groq to `ChatGoogleGenerativeAI` (`gemini-3.5-flash-lite`) via `langchain-google-genai`.
   - **LCEL Chains & Memory:** `ChatPromptTemplate`, `MessagesPlaceholder("history")`, and `StrOutputParser()`.
   - **Automated Prompt Evaluation:** CSV-driven test harness (`tests.csv`, `brightpage_tests.csv`) measuring pass rates across prompt iterations.
   - **Temperature & Stability:** Comparing `temperature=0.3` vs two runs at `temperature=1.0`.
-  - **LangChain Agent Sneak Peek:** `from langchain.agents import create_agent` and classifying jobs as `plain code`, `one LLM call`, or `agent`.
+  - **LangChain Agent Sneak Peek:** `from langchain.agents import create_agent` and classifying BrightPage jobs as `plain code`, `one LLM call`, or `agent`.
 
 ---
 
