@@ -54,13 +54,13 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 - **Directory:** [`DAY4/`](file:///c:/Users/ramuv/AgenticAI/DAY4)
 - **Detailed Guide:** [`DAY4/README.md`](file:///c:/Users/ramuv/AgenticAI/DAY4/README.md)
 - **Notebook:** [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY4/task.ipynb)
-- **Domains:** Sweet Crumbs Home Bakery & BrightPage Stationery & Office Supplies
+- **Domain:** BrightPage Stationery & Office Supplies
 - **Concepts & Implementation:**
-  - **Tool-Calling Agents:** `@tool` decorators (`get_price`, `is_open`, `log_order` and BrightPage's `get_stationery_price`, `check_store_and_delivery`, `log_stationery_order`) wired into `create_agent` with `ChatGroq` (`openai/gpt-oss-20b`).
-  - **Pydantic Validation & `with_structured_output`:** Enforced `Order` and `StationeryOrder` schemas and tested structured extraction on 5 messy BrightPage customer messages.
-  - **Sheet Integration:** Connected to Google Sheets via `gspread` in Colab with a local CSV-backed `LocalWorksheet` mirror (`sweet_crumbs_orders.csv`, `brightpage_orders.csv`).
-  - **Customer Edge-Case Testing:** Verified `"donut"` (unlisted item), missing pickup date, and `0 cupcakes` prevent invalid sheet writes and added them to [`DAY3/tests.csv`](file:///c:/Users/ramuv/AgenticAI/DAY3/tests.csv) (13/13 passing).
-  - **Trace Inspection & Break-It Test:** Counted model vs tool calls using `pretty_print()`, and verified how renaming `get_price` to `tool1` (`"does stuff"`) breaks tool selection before restoring it.
+  - **Tool-Calling Agent:** `@tool` decorators (`get_stationery_price`, `is_store_open`, `check_delivery_fee`, `log_stationery_order`) wired into `create_agent` with `ChatGroq` (`openai/gpt-oss-20b`).
+  - **Pydantic Validation & `with_structured_output`:** Enforced `StationeryOrder` schema and tested structured extraction on 5 messy BrightPage customer messages.
+  - **Sheet Integration:** Connected to Google Sheets (`BrightPage Stationery Orders`) via `gspread` in Colab with a local CSV-backed `LocalWorksheet` mirror (`brightpage_orders.csv`).
+  - **Customer Edge-Case Testing:** Verified `"scientific calculator"` (not in catalogue), missing delivery date, and `0 geometry box sets` prevent invalid sheet writes and added them to [`DAY3/brightpage_tests.csv`](file:///c:/Users/ramuv/AgenticAI/DAY3/brightpage_tests.csv) (13/13 passing).
+  - **Trace Inspection & Break-It Test:** Counted model vs tool calls using `pretty_print()`, and verified how renaming `get_stationery_price` to `tool1` (`"does stuff"`) breaks tool selection before restoring it.
 
 ---
 
