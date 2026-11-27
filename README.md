@@ -68,5 +68,5 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 
 - **Day 1, Day 2 & Day 4** use **Groq API Key** (`GROQ_API_KEY`).
 - **Day 3** uses **Google Gemini API Key** (`GOOGLE_API_KEY` from [Google AI Studio](https://aistudio.google.com/app/apikey)).
-- **Google Colab:** Add `GROQ_API_KEY` / `GOOGLE_API_KEY` to Colab Secrets (the 🔑 Key icon on the left sidebar) and toggle **"Notebook access"** to **ON**.
+- **Google Colab:** Add `GROQ_API_KEY` / `GOOGLE_API_KEY` to Colab Secrets (the Key icon on the left sidebar) and toggle **"Notebook access"** to **ON**.
 - **Local Runs:** Managed via the single root `.env` (automatically discovered across all days via `python-dotenv`). Copy `.env.example` to `.env` and add your keys.
