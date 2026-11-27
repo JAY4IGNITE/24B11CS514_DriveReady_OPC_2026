@@ -64,9 +64,22 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 
 ---
 
+### [DAY 5] Memory (`InMemorySaver` + `thread_id`) & RAG (`ChromaDB`)
+- **Directory:** [`DAY5/`](file:///c:/Users/ramuv/AgenticAI/DAY5)
+- **Detailed Guide:** [`DAY5/README.md`](file:///c:/Users/ramuv/AgenticAI/DAY5/README.md)
+- **Notebook:** [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY5/task.ipynb)
+- **Domain:** BrightPage Stationery & Office Supplies (+ 3-paragraph PDF Story RAG Lab)
+- **Concepts & Implementation:**
+  - **Thread Memory (`InMemorySaver` + `thread_id`):** Isolated multi-customer conversations (`"ravi"` vs `"sravani"`) combining recall, RAG policy answers, and sheet order logging.
+  - **RAG with `ChromaDB` & `all-MiniLM-L6-v2`:** Indexed 16 BrightPage store policies/FAQs and exposed `@tool search_brightpage_faq` alongside Day 4 tools.
+  - **Single-Agent Sign-Off (`tests.csv`):** Evaluated 18 test cases (13 BrightPage core/edge + 5 RAG policy tests) with a fresh `thread_id` per row, achieving **17/18 (94%)**.
+  - **Multi-Paragraph PDF RAG Lab (`story_rag.pdf`):** Extracted and chunked *The Whispering Umbrella* (3 paragraphs) with `pypdf`, indexed in ChromaDB, and verified grounded Q&A plus honest refusal on unanswerable questions.
+
+---
+
 ## Setup & API Keys
 
-- **Day 1, Day 2 & Day 4** use **Groq API Key** (`GROQ_API_KEY`).
+- **Day 1, Day 2, Day 4 & Day 5** use **Groq API Key** (`GROQ_API_KEY`).
 - **Day 3** uses **Google Gemini API Key** (`GOOGLE_API_KEY` from [Google AI Studio](https://aistudio.google.com/app/apikey)).
 - **Google Colab:** Add `GROQ_API_KEY` / `GOOGLE_API_KEY` to Colab Secrets (the Key icon on the left sidebar) and toggle **"Notebook access"** to **ON**.
 - **Local Runs:** Managed via the single root `.env` (automatically discovered across all days via `python-dotenv`). Copy `.env.example` to `.env` and add your keys.
