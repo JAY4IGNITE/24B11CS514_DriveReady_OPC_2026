@@ -83,11 +83,10 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 - **Notebook:** [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY6/task.ipynb)
 - **Domain:** BrightPage Stationery & Office Supplies
 - **Concepts & Implementation:**
-  - **Planning Techniques:** Compared Chain-of-Thought (no tools), ReAct (`create_agent`), and Plan-and-Execute (`ExecutionPlan` structured output + tool execution) on a multi-item school workshop quote (`Rs 2,170`, free delivery).
-  - **Plain-Python Router to LangGraph `StateGraph`:** Built `Intent` structured classifier (`classify_with`), `BrightPageState` (`TypedDict`), nodes, `add_conditional_edges`, and Mermaid graph visualization (`brightpage_router_graph.png`).
+  - **Plain-Python Router to LangGraph `StateGraph`:** Implemented `Intent` structured classifier (`handle`), `BrightPageState` (`TypedDict`), `classify`, `ask_agent`, `answer_faq`, `take_order`, `other`, `route`, `add_conditional_edges`, and Mermaid PNG rendering (`brightpage_router_graph.png`).
   - **Focused Agents Inside Workflow Nodes:** Separated `faq_agent` (read-only pricing/FAQ/hours tools, no order logging) from `order_agent` (pricing + `log_stationery_order`) and a zero-LLM `other` branch.
-  - **Streamed Routing & Edge Cases:** Achieved **8/8 (100%)** routing accuracy with `graph.stream(..., stream_mode="updates")`, handling ambiguous inquiries, Telugu-English code-mixed requests, and unlisted products cleanly.
-  - **Extended 4-Branch Workflow (`ext_graph`):** Added `complaint` routing and a post-order `review_order` state node (`brightpage_extended_graph.png`) flagging bulk orders (`qty >= 10` or `discount > 0` or `total > 1000`) as `owner_review_required`.
+  - **Streamed Routing & Customer Edge Cases:** Verified **8/8** messages via `graph.stream(..., stream_mode="updates")`, handling ambiguous inquiries, Telugu-English code-mixed requests, and greetings cleanly.
+  - **Extended 4-Branch Workflow (`my_graph`):** Built `CustomShopState` with `complaint` routing and a post-order `review_order` node (`brightpage_extended_graph.png`) flagging bulk orders (`qty >= 10` or `discount > 0` or `total > 1000`) as `owner_review_required`.
 
 ---
 
