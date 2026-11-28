@@ -77,9 +77,23 @@ Repository for daily tasks, progressive agent architectures, and hands-on implem
 
 ---
 
+### [DAY 6] Workflows, Planning & LangGraph
+- **Directory:** [`DAY6/`](file:///c:/Users/ramuv/AgenticAI/DAY6)
+- **Detailed Guide:** [`DAY6/README.md`](file:///c:/Users/ramuv/AgenticAI/DAY6/README.md)
+- **Notebook:** [`task.ipynb`](file:///c:/Users/ramuv/AgenticAI/DAY6/task.ipynb)
+- **Domain:** BrightPage Stationery & Office Supplies
+- **Concepts & Implementation:**
+  - **Planning Techniques:** Compared Chain-of-Thought (no tools), ReAct (`create_agent`), and Plan-and-Execute (`ExecutionPlan` structured output + tool execution) on a multi-item school workshop quote (`Rs 2,170`, free delivery).
+  - **Plain-Python Router to LangGraph `StateGraph`:** Built `Intent` structured classifier (`classify_with`), `BrightPageState` (`TypedDict`), nodes, `add_conditional_edges`, and Mermaid graph visualization (`brightpage_router_graph.png`).
+  - **Focused Agents Inside Workflow Nodes:** Separated `faq_agent` (read-only pricing/FAQ/hours tools, no order logging) from `order_agent` (pricing + `log_stationery_order`) and a zero-LLM `other` branch.
+  - **Streamed Routing & Edge Cases:** Achieved **8/8 (100%)** routing accuracy with `graph.stream(..., stream_mode="updates")`, handling ambiguous inquiries, Telugu-English code-mixed requests, and unlisted products cleanly.
+  - **Extended 4-Branch Workflow (`ext_graph`):** Added `complaint` routing and a post-order `review_order` state node (`brightpage_extended_graph.png`) flagging bulk orders (`qty >= 10` or `discount > 0` or `total > 1000`) as `owner_review_required`.
+
+---
+
 ## Setup & API Keys
 
-- **Day 1, Day 2, Day 4 & Day 5** use **Groq API Key** (`GROQ_API_KEY`).
+- **Day 1, Day 2, Day 4, Day 5 & Day 6** use **Groq API Key** (`GROQ_API_KEY`).
 - **Day 3** uses **Google Gemini API Key** (`GOOGLE_API_KEY` from [Google AI Studio](https://aistudio.google.com/app/apikey)).
 - **Google Colab:** Add `GROQ_API_KEY` / `GOOGLE_API_KEY` to Colab Secrets (the Key icon on the left sidebar) and toggle **"Notebook access"** to **ON**.
 - **Local Runs:** Managed via the single root `.env` (automatically discovered across all days via `python-dotenv`). Copy `.env.example` to `.env` and add your keys.
